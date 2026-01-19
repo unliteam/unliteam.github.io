@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html><html>
+<style>
+body {
+	background: url("images/bg.jpg") repeat-y;
+	background-color: #252525;
+	color: #fff;
+	font-family: Oswald, sans-serif
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<title>Главная</title>
+	<meta name="keywords" content="garrysmod,media,player,request,search,youtube,vimeo,twitch,livestream,blip,reddit">
+	<link rel="stylesheet" href="styles/request.css">
+	<body>
+		<div style="position:absolute;top:0;left:0;right:0;bottom:0">
+			<section class="content-container">
+				<h1>Выберите сервис, на котором хотите воспроизвести контент</h1>
+				<div class="services">
+					<span class="media-service logo-youtube" data-href="http://www.youtube.com/" data-name="YouTube" data-service="yt" onclick="selectService(this)" onmouseover="hoverService()">&nbsp;</span> 
+					<span class="media-service subtext logo-twitch" data-href="http://www.twitch.tv/" data-name="Twitch" data-service="twv twl" onclick="selectService(this)" onmouseover="hoverService()">&nbsp;</span> 
+					<span class="media-service subtext logo-soundcloud" data-href="http://soundcloud.com/search" data-name="SoundCloud" data-overlay="true" data-service="sc" onclick="selectService(this)" onmouseover="hoverService()">&nbsp;</span></div>
+					<div class="url-container">
+						<h1 class="url-notice">Или введите ссылку с поддерживающим расширением</h1>
+						<input id="urlinput" class="url-input" placeholder="mp3, wav, ogg, jpg, png, webm" autofocus="" onkeydown="onUrlKeyDown(event)">
+						<a href="javascript:requestUrl();" class="url-submit">Запрос</a></div>
+
+						<link href="../css?family=Oswald" rel="stylesheet"><script src="scripts/request.js"></script>
+				</body>
+			</head>
+		</html>
