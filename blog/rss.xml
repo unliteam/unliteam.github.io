@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>unliteam Blog</title>
+        <link>https://unliteam.github.io/blog</link>
+        <description>unliteam Blog</description>
+        <lastBuildDate>Sun, 30 Nov 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ru</language>
+        <item>
+            <title><![CDATA[Ноябрьский хотфикс]]></title>
+            <link>https://unliteam.github.io/blog/November-2025-hotfix</link>
+            <guid>https://unliteam.github.io/blog/November-2025-hotfix</guid>
+            <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Исправлен конфликт открытия <code>slb_menu</code> на клавишу <code>F1</code></p>
+<p>Исправлено сильное масштабирование размера шрифта  в <strong>Сводке</strong></p>
+<p>Начальные субтитры поделены на разработчиков <a href="https://steamcommunity.com/sharedfiles/filedetails/?l=russian&amp;id=122351397" target="_blank" rel="noopener noreferrer">SledBuild 2008</a> и <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2844628726" target="_blank" rel="noopener noreferrer">SledBuild Re-Classic</a><br>
+<!-- -->Где первым просто выражена дань уважения, никакого участия к модифицированному режиму они не имеют.</p>
+<p><img decoding="async" loading="lazy" alt="11-30-november-2025-hotfix" src="https://unliteam.github.io/assets/images/image-a94a17c4d81b1d627d41801f7d74bc3a.jpg" width="1280" height="720" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Хотфикс 30/10]]></title>
+            <link>https://unliteam.github.io/blog/October-2025-hotfix</link>
+            <guid>https://unliteam.github.io/blog/October-2025-hotfix</guid>
+            <pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>При взятии <code>toolgun</code> в руки логотип с краткой <em><strong>debug-информацией</strong></em> скрывается</p>
+<p>Написана система достижений <code>(F2)</code>. Преимущественно это достижения за действия в рамках режима, но мы также старались добавить их и для взаимодействия с дополнениями из мастерской</p>
+<p>Помимо доски со статистикой, игрокам теперь доступна глобальная
+статистика заездов <code>(F4)</code> с возможностью сортировки по имени, количеству побед или скорости</p>
+<p>При переходе в режим танцев игрок получает информацию об управлении в данном режиме</p>
+<p>Исправлена давняя проблема режима, при которой телепортация срабатывала с принудительной сменой <code>collision group</code>, из-за чего вид от первого лица менялся и блокировался</p>
+<p><em><strong>Улучшена визуальная составляющая</strong></em> <code>Scoreboard</code> :</p>
+<ul>
+<li>Добавлена анимация: логотип смещается за курсором.</li>
+<li>Вырезан debug - никакого больше спама в консоли</li>
+<li>Значения <code>Won</code> и <code>Lost</code> более не используют сессионную статистику, а берут глобальную из базы данных</li>
+<li>Имя игрока и названия команд помощи можно скопировать нажатием</li>
+</ul>
+<p><em><strong>Доску статистики порезали для оптимизации</strong></em> :</p>
+<ul>
+<li>Сокращено количество анимаций</li>
+<li>Уменьшен радиус фокусировки</li>
+<li>Вместо одной большой доски теперь используются две небольшие, расположенные в более подходящих местах</li>
+</ul>
+<p><em><strong>Обновлен режим <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2844628726" target="_blank" rel="noopener noreferrer">SledBuild Re-Classic</a></strong></em> :</p>
+<ul>
+<li>Исправлены известные на данный момент проблемы ( неправильные вызовы методов - отсутствие проверок. )</li>
+<li>Произведена чистка логики</li>
+</ul>
+<p>После последнего обновления карты последовало 7 исправлений и улучшений разного объема</p>
+<p>Была проделана большая комплексная работа по оптимизации: кэширование, оптимизация <em><strong>проверок и сетевых сообщений</strong></em>, исправление <em><strong>неправильных таймеров</strong></em> и еще многое по мелочи..</p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[🔮 Празднование Хэллоуина на следбилде началось!]]></title>
+            <link>https://unliteam.github.io/blog/hween_2025</link>
+            <guid>https://unliteam.github.io/blog/hween_2025</guid>
+            <pubDate>Wed, 15 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Это уже <em><strong>третье празднование</strong></em> за всё время существования проекта. Как и в прошлые разы, мы подошли к этому мероприятию максимально серьёзно. Как обычно, мы не смогли обойти стороной наши карты, — на время празднования установлена <em><strong>тематическая</strong></em> <code>slb_snowsled_v5_hween_2025</code> с рядом новых фишек и исправлениями, которые ещё не посетили основные билды наших карт. Как всегда, Хэллоуин — хороший полигон для чего-то нового.</p>
+<p>Итог: мы выполнили весь запланированный объём работ. Главное достижение — мы сделали это гораздо раньше сроков, особенно на фоне нашего предыдущего опыта. В общем, всех приглашаем хотя бы раз посетить SLB (это того стоит) <em><strong>до конца ивента — конец первой декады ноября.</strong></em></p>
+<p><img decoding="async" loading="lazy" alt="hween_2025" src="https://unliteam.github.io/assets/images/image-32e12519f050f35a8001ec79a084923d.jpg" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>announcements</category>
+        </item>
+        <item>
+            <title><![CDATA[ОКТЯБРЬСКОЕ]]></title>
+            <link>https://unliteam.github.io/blog/OKTyabRSKoE</link>
+            <guid>https://unliteam.github.io/blog/OKTyabRSKoE</guid>
+            <pubDate>Mon, 13 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Зима еще не наступила, а мы уже здесь. Ожидаемо. Не то, чтобы с каким-то обновлением, но пару интересных улучшений и нововведений вычитать можно.<br>
+<!-- -->::</p>
+<ul>
+<li>После ряда наблюдений за игроками — теперь за 10 секунд до начала заезда графически отчет на стартовой площадки меняет цвета и проигрывает звуковое сопровождение</li>
+<li><strong>Улучшена логика хитсаунда</strong> от снежков. Если раньше это был просто набор звуков, сейчас же последовательный логичный аккомпанемент попадания снежком с некой логикой, например, <strong>сбросом счетчика через 5 секунд, в случае прекращения попаданий</strong></li>
+<li>Восстановлена работа <code>mediaplayer'а</code> <strong>(by Shadowsun)</strong></li>
+<li>Добавлен кратковременный стресс-тест кол-во кадров и последующая опТиМиЗАЦия клиента</li>
+<li>Исправлена проблема наложений друг на друга <strong>некоторых</strong> элементов интерфейса в <strong>некоторых</strong> случаях</li>
+<li>Эффект ps1 <strong>(by FosterZ)</strong> можно включить/отключить нажатием F11</li>
+<li>Обновлен и дополнен список подсказок</li>
+<li>Вернули первоначальную задумку респавна <code>slbreturn (R)</code> со свойственным оформлением</li>
+<li>Скорректировали работу чекпоинтов <code>slbstuck (G)</code>. Добавили ряд защит от злоупотреблений</li>
+<li><strong>Расширен список настроек</strong>. Персонализировать игровой НЕДОинтерфейс теперь можно на пару настоек больше :-P</li>
+<li>Расширен набор предметов доступных для взаимодействия</li>
+<li>Экран инициализации вместо статического заполнения цвета теперь имеет палитру</li>
+<li>Расширили палитру цветов для доски <code>pixelart</code></li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="OKTyabRSKoE" src="https://unliteam.github.io/assets/images/image-3dabbb71affdeada552143896b13cff8.png" width="1440" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Маленькое обновление]]></title>
+            <link>https://unliteam.github.io/blog/smallupdate</link>
+            <guid>https://unliteam.github.io/blog/smallupdate</guid>
+            <pubDate>Fri, 04 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Маленькое обновление.<br>
+<!-- -->Без трёх дней уже как месяц мы не выходили на связь.<br>
+<!-- -->Не буду врать - всё это время работы не велись. Нужно было взять перерыв.<br>
+<!-- -->Но за последнюю неделю началось продвижение в работе.</p>
+<p><strong>Нам есть, что рассказать:</strong></p>
+<p><em>I.</em>      Теперь для победителя в заезде воспроизводится эффект конфетти в свойственной тематики следбилда.</p>
+<p><em>II.</em>      Улучшили визуальную часть. Надоело повторять, что раз за разом мы пробуем, экспериментируем с взаимодействием с окружением. Теперь это миниатюры объектов, вроде лодок, от них в свою очередь исходят отзвуки, характерные для их среды (шум волн, крики чаек и другие атмосферные эффекты)... Или, например, БТР, стоящий на полке, напоминающий о себе рандомно воспроизводящимися звуками езды или сирены.</p>
+<p><em>III.</em>      Мы упростили себе жизнь. Раньше нам приходилось «изобретать велосипед» — поддерживать локальную сборку сервера, вырезая лишнее для стабильной работы. Теперь всё работает на активной сборке в реальном времени.<br>
+<!-- -->Что это значит для вас? Обновления будут выходить чаще.</p>
+<p><em>IV.</em>      Небольшие исправления. Ничего особенного.</p>
+<p><img decoding="async" loading="lazy" alt="smallupdate" src="https://unliteam.github.io/assets/images/image-2c72b40c7c778d2517f2da8c971f0852.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Работа над системой чекпоинтов]]></title>
+            <link>https://unliteam.github.io/blog/checkpoints</link>
+            <guid>https://unliteam.github.io/blog/checkpoints</guid>
+            <pubDate>Sat, 07 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Работа над системой чекпоинтов закончена.
+Код загружен на сервер. Пришлось перекомбинировать некоторые ранее разработанные механизмы.  <strong>Во избежание</strong> случайных (точнее, продолжительных) нажатий мы добавили визуальное предупреждение о перемещении на ближайший чекпоинт. Сам принцип следующий:
+— Зажатие <strong>G</strong> → <strong>6 секунд</strong> → телепорт к ближайшему чекпоинту + немного ускорения.<br>
+<!-- -->Команда <strong><code>!slbreturn</code></strong> <strong>по-прежнему</strong> работает, но теперь в ней почти нет надобности. Оставили её на исключительные случаи.</p>
+<p><strong>Лидерборд</strong><br>
+<!-- -->Теперь в нём акцентируется внимание <strong>на ваших результатах</strong> — они выделяются рамкой с особой цветовой палитрой.</p>
+<p><strong>Вдобавок</strong><br>
+<!-- -->-- Актуализированы подсказки.<br>
+<!-- -->-- Единственный элемент худа теперь можно отключить.<br>
+<!-- -->-- Отключена проверка <code>check64branch</code>. Уведомление оказалось навязчивым, а большинство не спешит переключаться на Chromium.<br>
+<!-- -->-- Обновлено главное меню (slbmenu). Все имеющие команды теперь присутствуют, улучшен механизм работы с ConVar'ами. Настройки сохраняются корректно.</p>
+<p><img decoding="async" loading="lazy" alt="checkpoints" src="https://unliteam.github.io/assets/images/image-d37ff10dd6484998f51a0b2b53be0788.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Планы на ближайшее будущее...]]></title>
+            <link>https://unliteam.github.io/blog/idea</link>
+            <guid>https://unliteam.github.io/blog/idea</guid>
+            <pubDate>Fri, 06 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Прошло уже почти две недели с последнего освещения нашей работы. Не побоюсь этого слова — это были самые ужасные дни. Каждый день я сталкивался с проблемами, которые требовали полной отдачи. И наконец: что же мы сделали за все эти, казалось бы, бесконечно длящиеся дни?</p>
+<p>Мы решили по-новому взглянуть на некоторые вещи. Всё это время мы улучшали внешний вид, переносили элементы интерфейса, визуализируя их прямо в игре, но как-то забывали про главное — про саму трассу :.</p>
+<p>Теперь мы поработали над физикой, и переворотов станет намного меньше. В частности, мы говорили про малогабаритные постройки. Тем не менее, сани больше не крутит как раньше: если вы заезжаете на наклон, система старается удержать вас по горизонтали, а не заваливать набок. А ещё прокручивает вас на исходную позицию, если вы вдруг умудрились перевернуться. Катиться всю гонку вниз головой — наверное, больше не придётся.</p>
+<p>Появились и полезные функции. Если вы где-то застряли, теперь можно просто ввести команду — и вас перебросит на ближайший чекпоинт или временно в нужную координату на трассе. (Скрипт на последней стадии теста; за выходные закрепим код и на сервере.)</p>
+<p><img decoding="async" loading="lazy" alt="idea" src="https://unliteam.github.io/assets/images/image-351c3ac8428d29ba5f87b2f39ec614a0.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Изменения за февраль → май]]></title>
+            <link>https://unliteam.github.io/blog/q1q2</link>
+            <guid>https://unliteam.github.io/blog/q1q2</guid>
+            <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Здесь мы перечислим изменения за первые два квартала этого года.<br>
+<!-- -->::</p>
+<ul>
+<li>Для <code>swep_hands</code> добавлена функция увеличения с помощью ПКМ.</li>
+<li>Руки и кисти больше не отображаются.</li>
+<li>Проведена масштабная работа над картой. Самые заметные изменения — переработка теней, солнечного света, обновлённый снежный particle, а также огромное количество исправлений на самой карте.</li>
+<li>Добавлена доска лидеров по параметрам <code>Won</code> и <code>topspeed</code>.<!-- -->
+<ul>
+<li>В конце каждого месяца будет подводиться статистика, которая публикуется на отдельной странице сайта. Мы пытаемся создать хотя бы минимальный стимул для побед. Возможно, в будущем проведём турнир.</li>
+<li>Добавлена визуализация результатов заезда в реальном времени.</li>
+<li>Был переделан механизм sqlite-таблицы в коде <code>sv_statssaving.lua</code>. Число отслеживающащих показателей стало больше, а значение <code>mapname</code>, наоборот -- удалено из-за ненадобности.</li>
+<li>Восстановлен вывод полной статистики в чат после присоединения.</li>
+</ul>
+</li>
+<li>Игра на сервере отныне сопровождается запуском фейерверка после выполнения ряда условий: Победы в заезде и т.д. (на реализации).</li>
+<li>Исправлена проблема с <code>thirdperson</code>: теперь он не конфликтует с видом от третьего лица в <code>InVehicle</code>.</li>
+<li>Отключено значительное количество неиспользуемого кода и почти вся лишняя UI-косметика.</li>
+<li>Обновлён ресурс с исходниками для <code>twitter emoji for easychat</code>.</li>
+<li>Исправлена работа <code>mediaplayer</code>.</li>
+<li>Восстановлено воспроизведение <code>taunt'ов</code>.</li>
+<li>Переработаны все справочные объекты: убраны бюрократизмы, текст в подсказках теперь звучит более понятно и по-человечески.</li>
+<li>Восстановлена команда <code>!slbreturn</code>.</li>
+<li>Исправлено множество ошибок в игровом режиме.</li>
+<li>В <code>scoreboard</code> на вкладку <code>Help</code> были добавлены актуальные команды.</li>
+<li>Был полностью пересобран плейлист музыкального сопровождения.</li>
+<li>В радиусе местоположения <code>entity-playable-piano</code>, представлена графическая анимация.</li>
+<li>Убраны некоторые сомнительные построения в угоду качества. На их же месте добавлена интерактивная заглушка с объяснением видения автора. Умеете красиво строить? -Пишите!</li>
+<li>Подключено дополнение <code>Pac-Man in Garry's Mod</code>.</li>
+<li>Изменен механизм получения снежков. Теперь достаточно нажать на E (Use), чтобы использовать swep, таким же способом работает и пополнение боезапаса</li>
+<li>Изменён HUD показателя скорости (в процессе).</li>
+<li>Добавлены начальные титры со списком разработчиков: от момента первой публикации до нынешнего времени.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="q1q2" src="https://unliteam.github.io/assets/images/image-2283b010520e9c7baea71234abd46851.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[slb_snowsled_v5_night]]></title>
+            <link>https://unliteam.github.io/blog/slb_snowsled_v5_night</link>
+            <guid>https://unliteam.github.io/blog/slb_snowsled_v5_night</guid>
+            <pubDate>Sat, 04 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p> С самого начала разработки карты мы внедрили ночную версию, однако, до настоящего времени она не соответствовала нашим минимальным стандартам качества. <em>На данный момент</em>, обладая хотя бы базовыми знаниями в области <strong>освещенности</strong>, <em>цветокоррекции</em>, <strong>контраста</strong> и <strong>резкости</strong>, мы надеемся, что достигли определённого прогресса. Мы уверены, что теперь, с учётом последних улучшений, нам удалось значительно приблизиться к созданию полноценной атмосферы ночной сцены.</p>
+<p><img decoding="async" loading="lazy" alt="slb_snowsled_v5_night" src="https://unliteam.github.io/assets/images/image-893539729779352b744dd5fca4d6ecfe.png" width="1920" height="1080" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[С наступающим Новым 2025 годом!]]></title>
+            <link>https://unliteam.github.io/blog/New-Year-2025</link>
+            <guid>https://unliteam.github.io/blog/New-Year-2025</guid>
+            <pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Друзья, коллеги и единомышленники! 🎉</p>
+<p>Вот и настал тот момент, когда мы, оглядываясь назад, с гордостью можем сказать, что прожили <strong>год вместе</strong>. <strong>Три года назад</strong> мы начали своё путешествие с идеей, которая стала тем, что мы называем <strong>SledBuild Re-Classic</strong>.</p>
+<p><strong>unliteam</strong> — это не просто проект. Это место, где каждый из нас может внести свою частицу, создать что-то важное и уникальное. Мы, как и наш <strong>SledBuild</strong>, остаёмся верными себе и <strong>продолжим двигаться вперёд</strong>, несмотря на вызовы времени. Этот год был для нас временем изменений и множества <strong>новых достижений</strong>.</p>
+<p>Давайте встречать Новый год с уверенностью и вдохновением! Пусть <strong>2025 год</strong> принесёт нам ещё больше <strong>креативных решений и возможностей для роста</strong>. Вперёд, к новым вершинам!</p>
+<p>С наступающим Новым годом, 🥂 <strong>SLB: Re-Classic!</strong></p>
+<p><img decoding="async" loading="lazy" alt="New Year 2025" src="https://unliteam.github.io/assets/images/image-newyear-060b00548267db5da539da08c7922d74.png" width="1920" height="1080" class="img_ev3q"></p>]]></content:encoded>
+            <category>announcements</category>
+        </item>
+        <item>
+            <title><![CDATA[slb_snowsled_v6]]></title>
+            <link>https://unliteam.github.io/blog/slb_snowsled_v6</link>
+            <guid>https://unliteam.github.io/blog/slb_snowsled_v6</guid>
+            <pubDate>Wed, 25 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Мы наконец-то готовы анонсировать. Точнее, мы уже загрузили карту в Workshop. Она установлена на нашем сервере и доступна всем желающим — любой может оценить плоды наших продолжительных трудов, как по времени, так и по усилиям. Нам предстоит ещё долгая полировка, но, как мы заявляли ранее, мы существенно движемся вперёд — заходя за горизонты дозволенного, как раньше нам казалось. Разумеется, карта не доделана. В некоторых местах она сыровата. Мы пошли ва-банк и предоставили карту в таком виде, в каком она есть, что для нас более чем удовлетворительно. Мы будем вносить изменения в карту по мере необходимости в реальном времени.</p>
+<p><em>Это только часть одной из будущих работ...</em></p>
+<p><img decoding="async" loading="lazy" alt="slb_snowsled_v6" src="https://unliteam.github.io/assets/images/image-6bfd0a779fa9f2a085843fa927476610.png" width="1920" height="1080" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[С 16-м днем рождения, 🎉SledBuild!]]></title>
+            <link>https://unliteam.github.io/blog/sledbuild_is_16_years_old</link>
+            <guid>https://unliteam.github.io/blog/sledbuild_is_16_years_old</guid>
+            <pubDate>Sun, 08 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="когда-то-16-лет-назад-в-декабре-на-свет-появился--всеми-нами-любимый-sledbuild">..когда-то, <strong>16 лет назад</strong>, в декабре, на свет появился 🎉 всеми нами любимый SledBuild<a href="https://unliteam.github.io/blog/sledbuild_is_16_years_old#%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-%D1%82%D0%BE-16-%D0%BB%D0%B5%D1%82-%D0%BD%D0%B0%D0%B7%D0%B0%D0%B4-%D0%B2-%D0%B4%D0%B5%D0%BA%D0%B0%D0%B1%D1%80%D0%B5-%D0%BD%D0%B0-%D1%81%D0%B2%D0%B5%D1%82-%D0%BF%D0%BE%D1%8F%D0%B2%D0%B8%D0%BB%D1%81%D1%8F--%D0%B2%D1%81%D0%B5%D0%BC%D0%B8-%D0%BD%D0%B0%D0%BC%D0%B8-%D0%BB%D1%8E%D0%B1%D0%B8%D0%BC%D1%8B%D0%B9-sledbuild" class="hash-link" aria-label="Прямая ссылка на когда-то-16-лет-назад-в-декабре-на-свет-появился--всеми-нами-любимый-sledbuild" title="Прямая ссылка на когда-то-16-лет-назад-в-декабре-на-свет-появился--всеми-нами-любимый-sledbuild">​</a></h2>
+<p><strong>Режим, который, несмотря на возраст, свою банальность и простоту, до сих пор остаётся на плаву.</strong></p>
+<p><img decoding="async" loading="lazy" alt="Happy birthday" src="https://unliteam.github.io/assets/images/image-1d898e8044149be0f373b6b643e0da06.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>announcements</category>
+        </item>
+        <item>
+            <title><![CDATA[Метаморфоза картостроения]]></title>
+            <link>https://unliteam.github.io/blog/Metamorphose_картостроения</link>
+            <guid>https://unliteam.github.io/blog/Metamorphose_картостроения</guid>
+            <pubDate>Sat, 07 Dec 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Мы существенно продвинулись в картостроении, оставив лишь ребра жесткости и отправив заскорузлость в прошлое. А теперь ближе к делу: мы полностью переделали <em>3dSkybox</em> — важнейшую проблему этой карты. Из-за сложной геометрии с постоянными склонами, возвышениями и изломами на тот момент, с нашим уровнем познаний, было невозможно реализовать что-либо большее, чем заглушку, оставленную нам в наследство авторами режима. Не стоит недооценивать значение этой детали: <em>3dSkybox</em> — это вынесенная на периферию часть карты, задающая её масштабность и габариты игрового мира. Решив эту задачу, мы переходим к следующей.</p>
+<p>Благодаря этому мы можем избежать замены <em>2dSkybox</em>'а, который уже настолько ассоциируется с картой, что его смена нарушила бы гармонию, которую мы добивались столько времени. Вечная мерзлота в сочетании с палящим солнцем — это уникальная черта, которую мы не хотим терять. Проблему мы решаем с помощью <em>3dSkybox</em> (не путать с 2D - версией). Дело в том, что оригинальный <em>2dSkybox</em> изначально не был рассчитан на карту с окружением, расположенным в низине горизонта. Из-за этого его край обрезается, а пиксели растягиваются, создавая пласт смазанных штрихов. 3D - окружение позволяет скрыть эти недостатки, сохранив визуальную целостность.</p>
+<p>К середине или концу месяца мы планируем полностью перевести весь серверный контент в режим дополнения мастерской. Это делается на случай отключения сервера исходя от разумных соображений целесообразности его смердящего состояния</p>
+<p><img decoding="async" loading="lazy" alt="Metamorphose" src="https://unliteam.github.io/assets/images/image-0627be2202bd5d12e7e6a56faffb3895.png" width="1920" height="1006" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Хотфикс 23/11]]></title>
+            <link>https://unliteam.github.io/blog/November-Hotfix-3</link>
+            <guid>https://unliteam.github.io/blog/November-Hotfix-3</guid>
+            <pubDate>Sat, 23 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Исправлено</div><div class="admonitionContent_BuS1"><ul>
+<li><strong>Скорость передвижения теперь вновь <code>Default</code>.</strong></li>
+<li><strong>Переход на 3-лицо теперь сопровождается анимацией перехода/и ходьбы.</strong></li>
+</ul></div></div>]]></content:encoded>
+            <category>hotfix</category>
+        </item>
+        <item>
+            <title><![CDATA[Хотфикс 19/11]]></title>
+            <link>https://unliteam.github.io/blog/November-Hotfix-2</link>
+            <guid>https://unliteam.github.io/blog/November-Hotfix-2</guid>
+            <pubDate>Tue, 19 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Исправлено</div><div class="admonitionContent_BuS1"><ul>
+<li><strong>Изменена геометрия многих элементов архитектурного дизайна, таких как уличные ступени, приствольный круг вокруг деревьев, трамплин на трассе и ещё пара незначительных элементов.</strong></li>
+<li><strong>Улучшена производительность расчётов при отрисовке путём преобразования некоторых объектов из категории <code>brush</code> в <code>func_detail</code>.</strong></li>
+<li><strong>Исправлена проблема, из-за которой текстура модели окон дублировалась со смещением, создавая эффект мерцающего наложения.</strong></li>
+</ul></div></div>]]></content:encoded>
+            <category>hotfix</category>
+        </item>
+        <item>
+            <title><![CDATA[Хотфикс 14/11]]></title>
+            <link>https://unliteam.github.io/blog/November-Hotfix</link>
+            <guid>https://unliteam.github.io/blog/November-Hotfix</guid>
+            <pubDate>Thu, 14 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Исправлено</div><div class="admonitionContent_BuS1"><ul>
+<li><strong>Исправлена проблема, из-за которой спидометр отображался при взаимодействии с энтити <code>Playable Piano</code>, а также <code>TheSitAnywhere Script</code>, путём проверки <code>vehicle:GetOwner</code>. Другими словами, измеритель скорости теперь не будет отображать на несозданном вами сидение.</strong></li>
+</ul></div></div>]]></content:encoded>
+            <category>hotfix</category>
+        </item>
+        <item>
+            <title><![CDATA[hint_object.lua]]></title>
+            <link>https://unliteam.github.io/blog/Hint_object_updated.lua</link>
+            <guid>https://unliteam.github.io/blog/Hint_object_updated.lua</guid>
+            <pubDate>Thu, 14 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Все доступные объекты к взаимодействию у нас привязаны к <code>IN_USE</code>. Это самый оптимальный вариант для того, чтобы у игрока была возможность переназначить клавишу в пункте с одноименным названием «<em>Использовать</em>» в настройках игры. В настоящее время мы использовали заглушку в виде значения по умолчанию — E. Сегодня мы вернулись, чтоб исправить данное недоразумение, но самым легким способом было бы просто переносить переназначенную клавишу из настроек игры клиента, Однако мы решили позаимствовать распространенное решение, как во многих играх. По нашему скромному мнению, идеальное решение для того, чтобы привлечь внимание игрока к интерактивным элементам.</p>
+<p><img decoding="async" loading="lazy" alt="Hint_object" src="https://unliteam.github.io/assets/images/image-c1408d041fa9dae42c181db0261fc952.gif" width="1553" height="847" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Интерактив.lua]]></title>
+            <link>https://unliteam.github.io/blog/interactive_props_updated.lua</link>
+            <guid>https://unliteam.github.io/blog/interactive_props_updated.lua</guid>
+            <pubDate>Wed, 13 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>Мы почти закончили работу над интерактивом окружающего мира. Нашей задачей по-прежнему остаётся привлечение внимания к изучению игрового процесса. Мы не стремимся придать каждому объекту пролог <strong>а, наоборот, исходим от того, что необходимо дать максимально большему количеству деталей, интересный к ознакомлению, контент</strong>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="основные-изменения-включают">Основные изменения включают<a href="https://unliteam.github.io/blog/interactive_props_updated.lua#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%8E%D1%82" class="hash-link" aria-label="Прямая ссылка на Основные изменения включают" title="Прямая ссылка на Основные изменения включают">​</a></h2>
+<p>( в период с 01.11.2024 по 13.11.2024 )</p>
+<ul>
+<li>Добавлена цветокоррекция (<em>рекомендовано к включению во время игры для извлечения желаемого эффекта</em>)</li>
+<li>Решена проблема, из-за которой <code>soundscape</code> некорректно проигрывал звуки в помещениях</li>
+<li>Добавлено энтити <code>Musical Keyboard</code></li>
+<li>Исправлена проблема, из-за которой PvP-ивент проигрывался от одного игрока в случаи отключения от сервера необходимого количества игроков</li>
+<li>Возвращены две вкладки <code>PostProcess</code> / <code>dupes</code> в qMenu</li>
+<li>Энтити <code>slb_radio</code> заменено на <code>rRadio</code></li>
+<li>Исправлена ошибка, из-за которой было возможно перемещение загрузочного окна</li>
+<li>Добавлен свет в помещения с недостаточно или отсутствующем освещением</li>
+<li>Восстановлена работа некоторых <code>.lua</code> скриптов после обновления Garry's Mod от 29/10/24</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="interactive" src="https://unliteam.github.io/assets/images/image-127ed9a3f8e65f2117eb6b9cafc4804b.png" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Мы продолжаем отказываться от устаревшего интерфейса]]></title>
+            <link>https://unliteam.github.io/blog/We_continue_to_abandon_the_outdated_interface</link>
+            <guid>https://unliteam.github.io/blog/We_continue_to_abandon_the_outdated_interface</guid>
+            <pubDate>Tue, 12 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p>На этот раз мы искоренили последний элемент HUD — таймер в паре со спидометром</p>
+<p>Таймер находится на своем законном месте на стартовой площадке вместе с подсказками. Да, мы избавились от этих надоедливых спам-сообщений в чате сервера.</p>
+<p>Что касаемо спидометра, он активизируется, когда вы в InVehicle в виде новой визуальной оболочки.</p>
+<p><img decoding="async" loading="lazy" alt="interface" src="https://unliteam.github.io/assets/images/image-de3af2f2a0d614a4d53443f5e8cb4f38.gif" width="1323" height="480" class="img_ev3q"></p>]]></content:encoded>
+            <category>Patch Note</category>
+        </item>
+        <item>
+            <title><![CDATA[Хэллоуинское Событие 2024]]></title>
+            <link>https://unliteam.github.io/blog/Halloween-2024</link>
+            <guid>https://unliteam.github.io/blog/Halloween-2024</guid>
+            <pubDate>Wed, 06 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Читать дальше..]]></description>
+            <content:encoded><![CDATA[<p><strong>Нам выпала возможность провести второе празднование Хэллоуина за наше недолгое существование на просторах игровых серверов <em>Garry's Mod</em>.
+В этот раз мы решили подойти более плодотворно к выполнению организации такого вида мероприятия.</strong></p>
+<p>С предыдущего обновления прошло порядка двух месяцев. Мы вынуждены показать что-то более существенное, чем ряд очередных исправлений, и зашли настолько далеко, что для реализации новых функций для всей ветки разработки нам потребуется значительный промежуток времени.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ghost-тематическая-карта-slb_snowsled_v5_halloween">👻<!-- --> Тематическая карта <code>slb_snowsled_v5_halloween</code><a href="https://unliteam.github.io/blog/Halloween-2024#ghost-%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-slb_snowsled_v5_halloween" class="hash-link" aria-label="Прямая ссылка на ghost-тематическая-карта-slb_snowsled_v5_halloween" title="Прямая ссылка на ghost-тематическая-карта-slb_snowsled_v5_halloween">​</a></h2>
+<p>Аутентичная к тематике грядущих (прошедших (¬_¬ ) событий. С общим оформлением и звуковым сопровождением. Была проделана масштабная работа над окружением, чтобы создать атмосферу, соответствующую настроению событий. <strong>Обновлённые элементы дизайна</strong> позволили нам улучшить визуальное восприятие непосредственно среды.
+Кроме того, <strong>музыкальные и звуковые эффекты</strong> были адаптированы для каждой зоны, подчеркивая уникальность каждого объекта.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="japanese_ogre-pvp-режим">👹<!-- --> PvP-режим<a href="https://unliteam.github.io/blog/Halloween-2024#japanese_ogre-pvp-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC" class="hash-link" aria-label="Прямая ссылка на japanese_ogre-pvp-режим" title="Прямая ссылка на japanese_ogre-pvp-режим">​</a></h2>
+<p>На время празднований мы реализовали возможность игры — игрок против игрока. Всё просто, через энное количество времени Вам предоставляется тематический вид оружия, с которым Вам предстоит состязаться с другими игроками. Продолжительность эдакого мероприятие ограничено по времени, и по окончанию которого изымается раннее выданное вам ранее оружие.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="space_invader-интерактив-с-окружением">👾<!-- --> Интерактив с окружением<a href="https://unliteam.github.io/blog/Halloween-2024#space_invader-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2-%D1%81-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC" class="hash-link" aria-label="Прямая ссылка на space_invader-интерактив-с-окружением" title="Прямая ссылка на space_invader-интерактив-с-окружением">​</a></h2>
+<p>Мы занялись реализацией взаимодействия игрока с объектами игрового мира. Я не причисляю это к нововведениям. Это скорее способ разнообразия игрового процесса. Например, при взаимодействии с потенциальным объектом игроки смогут ознакомиться с прологом контекста в сопровождении звукового контента. Это позволит вам глубже погрузиться в атмосферу игры и создать более выраженные ощущение от создаваемо нами игрового процесса. Как вы поняли мы добавили (добавляем) перспективу изучения объектов, находящиеся в окружении. Игроки смогут получать различные сообщения в зависимости от того, как они взаимодействуют с предметами.</p>
+<p>Как мы подчеркнули ранее, мы уделим вниманию <strong>визуальным и звуковым эффектам</strong>. Когда игрок взаимодействует с объектом, это будет сопровождаться уникальным звуковым оформлением, которое подчеркнёт атмосферу момента.</p>
+<p>Таким образом, наше стремление создать больше возможностей для взаимодействия с игровым миром не только потенциально способны увеличить интерес к игре, но и поможет игрокам почувствовать себя частью этого мира. Мы уверены, что такие детали способны сделать игровой процесс более увлекательным и запоминающимся.</p>
+<p><img decoding="async" loading="lazy" alt="Halloween-2024" src="https://unliteam.github.io/assets/images/image-697ed91a58c2caf9f13b224ba4ff1ad8.png" width="1920" height="1080" class="img_ev3q"></p>]]></content:encoded>
+            <category>Event</category>
+        </item>
+    </channel>
+</rss>
