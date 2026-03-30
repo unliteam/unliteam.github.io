@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CS2 Loading | Sledbuild Mode</title>
+    <title>loading</title>
     <style>
         * {
             margin: 0;
@@ -14,7 +14,7 @@
             height: 100vh;
             font-family: 'Roboto Condensed', sans-serif;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             align-items: center;
             overflow: hidden;
             position: relative;
@@ -44,19 +44,34 @@
         }
 
         .cs2-panel {
-            width: 440px;
+            width: 520px;
             height: 94vh;
-            margin-right: 30px;
+            margin-left: 30px;
             background: rgba(10, 15, 20, 0.4);
             backdrop-filter: blur(18px) brightness(0.92);
             -webkit-backdrop-filter: blur(18px) brightness(0.92);
-            padding: 70px 55px;
+            padding: 50px 45px;
             box-sizing: border-box;
             color: white;
             position: relative;
-            box-shadow: -15px 0 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 15px 0 40px rgba(0, 0, 0, 0.5);
             border-radius: 12px;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-y: auto;
+        }
+
+        .cs2-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .cs2-panel::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+
+        .cs2-panel::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.4);
+            border-radius: 2px;
         }
 
         .cs2-panel::after {
@@ -85,11 +100,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 20px 0 30px 0;
+            margin: 0 0 20px 0;
         }
 
         .gmod-logo {
-            width: 320px;
+            width: 280px;
             max-width: 100%;
             height: auto;
             filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
@@ -100,58 +115,62 @@
             height: 3px;
             background: rgba(255, 255, 255, 0.4);
             border: none;
-            margin: 10px 0 40px 0;
+            margin: 10px 0 25px 0;
             border-radius: 3px;
         }
 
-        .info-section {
-            text-align: left;
-        }
-
-        .info-title {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 12px;
-            font-weight: 400;
+        .history-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 15px 0 12px 0;
             letter-spacing: 0.5px;
-        }
-
-        .info-desc {
-            font-size: 17px;
-            line-height: 1.3;
             color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 35px;
         }
 
-        .settings-title {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .settings-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .settings-list li {
-            font-size: 16px;
+        .history-text {
+            font-size: 15px;
+            line-height: 1.45;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: flex-start;
+            margin-bottom: 20px;
+            text-align: justify;
         }
 
-        .settings-list li::before {
-            content: "•";
-            margin-right: 10px;
-            color: rgba(255, 255, 255, 0.6);
+        .authors-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 20px 0 15px 0;
+            color: rgba(255, 255, 255, 0.95);
+            border-left: 3px solid rgba(255,255,255,0.5);
+            padding-left: 12px;
+        }
+
+        .authors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+            margin-bottom: 20px;
+        }
+
+        .author-item {
+            font-size: 14px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .author-role {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.65);
+            display: block;
         }
 
         .spacer {
             flex-grow: 1;
+            min-height: 15px;
         }
     </style>
 </head>
@@ -162,24 +181,23 @@
 <div class="cs2-panel">
     <div class="content-wrapper">
         <div class="gmod-container">
-            <img src="img/gmod_logo_brave.png" alt="GMod Sledbuild Logo" class="gmod-logo">
+            <img src="img/gmod_logo_brave.png" alt="SledBuild Logo" class="gmod-logo">
         </div>
 
         <hr class="divider">
 
-        <div class="info-section">
-            <div class="info-title">Bomb Scenario Mission</div>
-            <div class="info-desc">
-                Buy new weapons at the beginning<br>
-                of each round with money earned.
-            </div>
+        <div class="history-title">Mode History</div>
+        <div class="history-text">
+            In distant December 2008, G3H (GeXeH) published his work - the SledBuild game mode for Garry's Mod 10 on the platform "garrysmod.org". The development of this mode gave the author his initial understanding of programming basics.
+        </div>
+        <div class="history-text">
+            On January 24, 2013, Robinkooli ported the work as part of the Workshop Beta for Garry's Mod, offering an updated and corrected version of the mode for Garry's Mod 13.
+        </div>
 
-            <div class="settings-title">Settings:</div>
-            <ul class="settings-list">
-                <li>Friendly fire is ON</li>
-                <li>Team collision is ON</li>
-                <li>Armor and defuse kits are purchasable</li>
-            </ul>
+        <div class="authors-title">SledBuild: Re-Classic 2026</div>
+        <div class="authors-grid">
+            <div class="author-item"><span class="author-name">/scientist_02</span><span class="author-role">[Coding & Development :: Server Owner]</span></div>
+            <div class="author-item"><span class="author-name">Gamoda</span><span class="author-role">[Map Development & Development :: Server Owner]</span></div>
         </div>
 
         <div class="spacer"></div>
