@@ -27,9 +27,9 @@ var snowStorm = (function(window, document) {
   this.followMouse = false;        // Snow movement can respond to the user's mouse
   this.snowColor = '#E7E7F5';        // Don't eat (or use?) yellow snow.
   this.snowCharacter = '&bull;';  // &bull; = bullet, &middot; is square on some systems etc.
-  this.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
+  this.snowStick = false;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
   this.targetElement = null;      // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
-  this.useMeltEffect = true;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
+  this.useMeltEffect = false;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
   this.useTwinkleEffect = false;  // Allow snow to randomly "flicker" in and out of view while falling
   this.usePositionFixed = false;  // true = snow does not shift vertically when scrolling. May increase CPU load, disabled by default - if enabled, used only where supported
   this.usePixelPosition = false;  // Whether to use pixel values for snow top/left vs. percentages. Auto-enabled if body is position:relative or targetElement is specified.
@@ -43,7 +43,7 @@ var snowStorm = (function(window, document) {
   this.flakeHeight = 8;           // Max pixel height reserved for snow element
   this.vMaxX = 5;                 // Maximum X velocity range for snow
   this.vMaxY = 4;                 // Maximum Y velocity range for snow
-  this.zIndex = 0;                // CSS stacking order applied to each snowflake
+  this.zIndex = -1;                // CSS stacking order applied to each snowflake
 
   // --- "No user-serviceable parts inside" past this point, yadda yadda ---
 
