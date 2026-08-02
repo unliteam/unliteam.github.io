@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>software</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #C0C0C0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23C0C0C0"/><rect width="20" height="20" fill="%23B0B0B0" opacity="0.3"/><rect x="20" y="20" width="20" height="20" fill="%23B0B0B0" opacity="0.3"/></svg>');
+            font-family: "Segoe UI", "Tahoma", "Verdana", "Arial", sans-serif;
+            font-size: 13px;
+            padding: 20px 10px;
+            margin: 0;
+            color: #1E1E1E;
+        }
+
+        .window-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ECE9D8;
+            border: 3px ridge #FFFFFF;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            padding: 6px 8px 8px 8px;
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.4);
+        }
+
+        .window-titlebar {
+            background: #0A246A;
+            background: linear-gradient(90deg, #0A246A 0%, #3A6EA5 100%);
+            padding: 4px 6px 4px 10px;
+            margin: -6px -8px 8px -8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #808080;
+        }
+
+        .window-titlebar span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .win-buttons {
+            display: flex;
+            gap: 4px;
+        }
+
+        .win-buttons button {
+            background: #C0C0C0;
+            border: 2px outset #FFFFFF;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #1E1E1E;
+            line-height: 16px;
+            text-align: center;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .win-buttons button:active {
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            padding: 1px 0 0 1px;
+        }
+
+        .tabs-container {
+            margin: 0 0 12px 0;
+            border-bottom: 2px solid #808080;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            padding: 0 4px;
+            background: #D4D0C8;
+        }
+
+        .tab-btn {
+            background: #D4D0C8;
+            border: 2px solid #808080;
+            border-bottom: none;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            padding: 6px 18px 4px 18px;
+            font-family: "Tahoma", sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: #1E1E1E;
+            cursor: pointer;
+            position: relative;
+            top: 2px;
+            margin-right: 2px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            transition: background 0.1s;
+            text-shadow: 1px 1px 0 #F0F0F0;
+        }
+
+        .tab-btn.active {
+            background: #ECE9D8;
+            border-color: #FFFFFF #808080 #808080 #ECE9D8;
+            border-bottom: 2px solid #ECE9D8;
+            top: 2px;
+            padding-bottom: 5px;
+            color: #000080;
+            text-shadow: 1px 1px 0 #FFFFFF;
+        }
+
+        .tab-btn:hover {
+            background: #E3DFD6;
+        }
+
+        .search-area {
+            background: #E3DFD6;
+            border: 2px inset #FFFFFF;
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            padding: 8px 10px;
+            margin: 0 0 14px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 12px;
+        }
+
+        .search-area label {
+            font-weight: bold;
+            font-size: 12px;
+            color: #1E1E1E;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .search-area input[type="text"] {
+            background: #FFFFFF;
+            border: 2px inset #808080;
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            padding: 4px 6px;
+            font-family: "Tahoma", sans-serif;
+            font-size: 12px;
+            width: 200px;
+            height: 26px;
+            outline: none;
+            color: #1E1E1E;
+        }
+
+        .search-area input[type="text"]:focus {
+            border-color: #0A246A #FFFFFF #FFFFFF #0A246A;
+        }
+
+        .search-area button {
+            background: #D4D0C8;
+            border: 2px outset #FFFFFF;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            padding: 4px 18px;
+            font-family: "Tahoma", sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #1E1E1E;
+            height: 28px;
+        }
+
+        .search-area button:active {
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            padding: 5px 17px 3px 19px;
+        }
+
+        .software-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #999999;
+            background: #FFFFFF;
+            margin-top: 4px;
+        }
+
+        .software-table th {
+            background: #D6D3CE;
+            border: 1px solid #FFFFFF;
+            border-bottom: 2px solid #808080;
+            border-right: 2px solid #808080;
+            padding: 6px 8px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: bold;
+            color: #1E1E1E;
+        }
+
+        .software-table th:last-child {
+            border-right: 1px solid #FFFFFF;
+        }
+
+        .app-row {
+            background: #F5F5F5;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        .app-row:nth-child(even) {
+            background: #FFFFFF;
+        }
+
+        .app-cell {
+            padding: 8px 6px;
+            vertical-align: top;
+        }
+
+        .icon-col {
+            width: 44px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 36px;
+            height: 36px;
+            background: #008080;
+            border: 2px outset #FFFFFF;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: "Tahoma", sans-serif;
+            text-shadow: 1px 1px 0 #004040;
+            box-shadow: 1px 1px 0 #404040;
+        }
+
+        .app-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #004E98;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.3px;
+        }
+
+        .app-desc {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #222222;
+            margin: 0;
+        }
+
+        .actions-col {
+            width: 150px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .btn {
+            display: block;
+            width: 120px;
+            margin: 4px auto;
+            padding: 3px 0;
+            font-size: 11px;
+            font-family: "Tahoma", sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            color: #1E1E1E;
+            background: #E0DFE3;
+            border-top: 2px solid #FFFFFF;
+            border-left: 2px solid #FFFFFF;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            cursor: pointer;
+            transition: 0.05s linear;
+        }
+
+        .btn:active {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #FFFFFF;
+            border-bottom: 2px solid #FFFFFF;
+            padding: 4px 0 2px 0;
+        }
+
+        .btn-download {
+            background: #D4E2EE;
+            color: #004E98;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+        }
+
+        .footer {
+            margin-top: 16px;
+            border-top: 2px groove #C0C0C0;
+            padding: 8px 4px 4px 4px;
+            text-align: center;
+            color: #444444;
+            font-size: 11px;
+            font-family: "Tahoma", sans-serif;
+        }
+
+        .footer a {
+            color: #0000A0;
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            color: #CC0000;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .search-area {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-area input[type="text"] {
+                width: 100%;
+            }
+            .actions-col {
+                width: 120px;
+            }
+            .btn {
+                width: 100px;
+            }
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-btn::before {
+            content: "📄 ";
+            font-size: 13px;
+        }
+        .tab-btn[data-tab="tab1"]::before { content: " "; }
+        .tab-btn[data-tab="tab2"]::before { content: " "; }
+        .tab-btn[data-tab="tab3"]::before { content: " "; }
+        .tab-btn[data-tab="tab4"]::before { content: " "; }
+        .tab-btn[data-tab="tab5"]::before { content: " "; }
+        .tab-btn[data-tab="tab6"]::before { content: " "; }
+        .tab-btn[data-tab="tab7"]::before { content: " "; }
+        .tab-btn[data-tab="tab8"]::before { content: " "; }
+        .tab-btn[data-tab="tab9"]::before { content: " "; }
+        .tab-btn[data-tab="tab10"]::before { content: " "; }
+        .tab-btn[data-tab="tab11"]::before { content: " "; }
+        .tab-btn[data-tab="tab12"]::before { content: " "; }
+    </style>
+</head>
+<body>
+<div class="window-wrapper">
+    <div class="window-titlebar">
+        <span>📁 Обзор программного обеспечения</span>
+        <div class="win-buttons">
+            <button>_</button><button>□</button><button>✕</button>
+        </div>
+    </div>
+
+    <div class="tabs-container">
+        <button class="tab-btn active" data-tab="tab1">Все программы</button>
+        <button class="tab-btn" data-tab="tab2">Звук</button>
+        <button class="tab-btn" data-tab="tab3">Графика</button>
+        <button class="tab-btn" data-tab="tab4">Интернет</button>
+        <button class="tab-btn" data-tab="tab5">Диск и файлы</button>  
+        <button class="tab-btn" data-tab="tab6">Мониторинг</button>
+        <button class="tab-btn" data-tab="tab7">Source Engine</button>
+        <button class="tab-btn" data-tab="tab8">Разработка</button>
+        <button class="tab-btn" data-tab="tab9">Утилиты</button>
+        <button class="tab-btn" data-tab="tab10">Офис</button>
+        <button class="tab-btn" data-tab="tab11">Драйверы & Системные утилиты</button>
+        <button class="tab-btn" data-tab="tab12">Видео</button>
+    </div>
+
+    <div class="search-area">
+        <label for="searchInput">🔍 Найти:</label>
+        <input type="text" id="searchInput" placeholder="Введите название...">
+        <button id="searchBtn">Искать</button>
+        <button id="resetSearchBtn">Сброс</button>
+        <span style="margin-left:auto; font-size:11px; color:#444444;">поиск в текущей вкладке</span>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <table class="software-table" id="programTable">
+            <thead><tr><th colspan="2">Название и описание</th><th>Действия</th></tr></thead>
+            <tbody id="mainTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="tab2" class="tab-content"><div id="tab2content"></div></div>
+    <div id="tab3" class="tab-content"><div id="tab3content"></div></div>
+    <div id="tab4" class="tab-content"><div id="tab4content"></div></div>
+    <div id="tab5" class="tab-content"><div id="tab5content"></div></div>
+    <div id="tab6" class="tab-content"><div id="tab6content"></div></div>
+    <div id="tab7" class="tab-content"><div id="tab7content"></div></div>
+    <div id="tab8" class="tab-content"><div id="tab8content"></div></div>
+    <div id="tab9" class="tab-content"><div id="tab9content"></div></div>
+    <div id="tab10" class="tab-content"><div id="tab10content"></div></div>
+    <div id="tab11" class="tab-content"><div id="tab11content"></div></div>
+    <div id="tab12" class="tab-content"><div id="tab12content"></div></div>
+
+    <div class="footer"></div>
+</div>
+
+<script>
+    (function() {
+        const programData = [
+            
+            // Звук
+            { name: "AIMP", desc: "Бесплатный аудиопроигрыватель с закрытым исходным кодом, написанный на Delphi", category: "Звук", download: "https://aimp.ru/?do=download&os=windows" },
+            { name: "Audacity", desc: "Простой в использовании многодорожечный аудиоредактор и программа для записи звука", category: "Звук", download: "https://www.audacityteam.org/download/windows" },
+            { name: "EqualizerAPO", desc: "Бесплатный системный эквалайзер с открытым исходным кодом", category: "Звук", download: "https://sourceforge.net/projects/equalizerapo/files/latest/download" },
+            { name: "Mp3tag", desc: "Мощный инструмент для редактирования метаданных аудиофайлов", category: "Звук", download: "https://www.mp3tag.de/en/download.html" },
+            { name: "TAL-Reverb-4", desc: "Бесплатный плагин VST эффект", category: "Звук", download: "https://tal-software.com/products/tal-reverb-4" },
+            
+            // Графика
+            { name: "Adobe Photoshop", desc: "Мощный графический редактор для фотографов, дизайнеров и художников", category: "Графика", download: "https://drive.google.com/file/d/1GYvoe8EXZ62SL6H_Hxi83oilMbKHfa1j/view?usp=sharing" },
+            { name: "Caesium Image Compressor", desc: "Инструмент с открытым исходным кодом для сжатия фотографий", category: "Графика", download: "https://saerasoft.com/caesium/#downloads" },
+            { name: "XnConvert", desc: "Быстрый кроссплатформенный пакетный конвертер изображений", category: "Графика", download: "https://www.xnview.com/en/xnconvert" },
+            { name: "XnView-MP", desc: "Многофункциональное приложение для работы с графическими файлами", category: "Графика", download: "https://www.xnview.com/en/xnview/" },
+            { name: "upscayl", desc: "Бесплатный и открытый ИИ-редактор для масштабирования изображений", category: "Графика", download: "https://github.com/upscayl/upscayl" },
+            
+            // Интернет
+            { name: "AmneziaVPN", desc: "VPN-клиент с открытым исходным кодом для безопасного доступа", category: "Интернет", download: "https://github.com/amnezia-vpn/amnezia-client/releases" },
+            { name: "qBittorrent", desc: "Мощный и легкий BitTorrent-клиент с открытым кодом", category: "Интернет", download: "https://www.qbittorrent.org/download" },
+            { name: "Telegram", desc: "Кроссплатформенный мессенджер с облачными функциями", category: "Интернет", download: "https://github.com/telegramdesktop/tdesktop/releases" },
+            { name: "Thorium Browser", desc: "Браузер на базе Chromium с оптимизациями производительности", category: "Интернет", download: "https://github.com/Alex313031/Thorium-Win/releases" },
+            { name: "Steam", desc: "Превосходная платформа для игроков и разработчиков", category: "Интернет", download: "https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe" },
+            { name: "Heroic", desc: "Альтернативный лаунчер для игр из Epic Games и GOG", category: "Интернет", download: "https://heroicgameslauncher.com" },
+            { name: "Legcord", desc: "Клиент для Discord с расширенными возможностями", category: "Интернет", download: "https://legcord.app/download/windows" },
+            { name: "voice-over-translation", desc: "Смотрите видео на другом языке с закадровым переводом и субтитрами в любом браузере", category: "Интернет", download: "https://github.com/ilyhalight/voice-over-translation?tab=readme-ov-file" },
+            { name: "Syncthing", desc: "Децентрализованная синхронизация файлов между устройствами", category: "Интернет", download: "https://github.com/Bill-Stewart/SyncthingWindowsSetup/releases" },
+            { name: "Apollo (Sunshine fork)", desc: "Сервер для потоковой трансляции игр (Artemis / Moonlight Noir)", category: "Интернет", download: "https://github.com/ClassicOldSong/Apollo/releases" },
+            { name: "Moonlight", desc: "Клиент с открытым кодом для стриминга игр (NVIDIA GameStream / Sunshine)", category: "Интернет", download: "https://github.com/moonlight-stream/moonlight-qt/releases" },
+            { name: "zapret-discord-youtube", desc: "Набор скриптов и готовых конфигураций на базе оригинальной утилиты Zapret, созданный для обхода блокировок", category: "Интернет", download: "https://github.com/flowseal/zapret-discord-youtube" },
+            { name: "tg-ws-proxy", desc: "Локальный MTProto-прокси для Telegram Desktop, который ускоряет работу Telegram, перенаправляя трафик через WebSocket-соединения", category: "Интернет", download: "https://github.com/Flowseal/tg-ws-proxy" },  
+            { name: "Cloudflare One Client", desc: "Безопасно перенаправляет ваш интернет-трафик через глобальную сеть Cloudflare", category: "Интернет", download: "https://one.one.one.one/" },          
+           
+            // Диск и файлы
+            { name: "7-Zip", desc: "Архиватор с открытым исходным кодом и высокой степенью сжатия", category: "Диск и файлы", download: "https://www.7-zip.org/download.html" },
+            { name: "Acronis Disk Director", desc: "Комплексный инструмент для управления разделами дисков", category: "Диск и файлы", download: "https://drive.google.com/file/d/1WziahComyl-tQGM_rGva4tY3h_p6wzj_/view?usp=sharing" },
+            { name: "BleachBit", desc: "Жесткий чистильщик системы для освобождения места", category: "Диск и файлы", download: "https://www.bleachbit.org/download" },
+            { name: "CrystalDiskInfo", desc: "Диагностика состояния жестких и твердотельных накопителей", category: "Диск и файлы", download: "https://sourceforge.net/projects/crystaldiskinfo/" },
+            { name: "CrystalDiskMark", desc: "Тест скорости чтения/записи накопителей", category: "Диск и файлы", download: "https://sourceforge.net/projects/crystaldiskmark/" },
+            { name: "Everything", desc: "Мгновенный поисковик по файлам и папкам для Windows", category: "Диск и файлы", download: "https://www.voidtools.com/ru-ru/downloads/" },
+            { name: "Formatter Silicon Power", desc: "Утилита для форматирования флешек Silicon Power", category: "Диск и файлы", download: "https://flashboot.ru/files/file/1/download/formatter_siliconpower_8a4/" },
+            { name: "FreeMove", desc: "Перемещение программ с диска C: на другие диски", category: "Диск и файлы", download: "https://github.com/imDema/FreeMove/releases" },
+            { name: "HP USB Disk Storage Format Tool", desc: "Утилита от HP для форматирования USB-накопителей", category: "Диск и файлы", download: "https://www.usbdev.ru/?wpfb_dl=2415" },
+            { name: "PeaZip", desc: "Мощный архиватор, альтернатива WinRAR и 7-Zip", category: "Диск и файлы", download: "https://peazip.github.io/peazip-64bit.html" },
+            { name: "Total Commander", desc: "Файловый менеджер с поддержкой вкладок", category: "Диск и файлы", download: "https://drive.google.com/file/d/1NRYzxPFS_9mxiil-7T1Yyv2YGpGqNYPK/view?usp=sharing" },
+            { name: "SteamCleaner", desc: "Удаление установочного «мусора» из папок Steam", category: "Диск и файлы", download: "https://github.com/Codeusa/SteamCleaner/releases" },
+            { name: "CompactGUI", desc: "Незаметно сжимает ваши игры и программы, уменьшая занимаемое ими пространство без ущерба для их функциональности", category: "Диск и файлы", download: "https://github.com/IridiumIO/CompactGUI/releases/" },
+            { name: "TeraCopy", desc: "Быстрое и надежное копирование и перемещение файлов", category: "Диск и файлы", download: "https://codesector.com/downloads" },
+            { name: "Victoria", desc: "Легендарная утилита для диагностики и ремонта HDD, SSD и флешек", category: "Диск и файлы", download: "https://hdd.by/?download=1&kccpid=916&kcccount=https://hdd.by/Victoria/Victoria537.zip" },
+            { name: "WinMerge", desc: "Сравнение и объединение текстовых файлов и папок", category: "Диск и файлы", download: "https://winmerge.org/downloads/?lang=ru" },
+            { name: "WizTree", desc: "Быстрый анализатор дискового пространства для Windows", category: "Диск и файлы", download: "https://www.diskanalyzer.com/download" },
+            
+            // Мониторинг
+            { name: "AIDA64 Extreme Edition", desc: "Глубокая диагностика, тестирование и мониторинг системы", category: "Мониторинг", download: "https://drive.google.com/file/d/1nOTCML3E29h2Hz04Tk7AS06XWbttjJDg/view?usp=sharing" },
+            { name: "Autoruns", desc: "Управление автозагрузкой в Windows (от Microsoft Sysinternals)", category: "Мониторинг", download: "https://download.sysinternals.com/files/Autoruns.zip" },
+            { name: "CPU-Z", desc: "Получение технической информации о процессоре и оперативной памяти", category: "Мониторинг", download: "https://www.cpuid.com/softwares/cpu-z.html" },
+            { name: "GPU-Z", desc: "Детальная диагностика видеокарты", category: "Мониторинг", download: "https://www.techpowerup.com/download/techpowerup-gpu-z/" },
+            { name: "MSI Afterburner", desc: "Разгон, тонкая настройка и мониторинг видеокарт", category: "Мониторинг", download: "https://www.msi.com/Landing/afterburner" },
+            { name: "System Informer", desc: "Продвинутый диспетчер задач и мониторинг системы", category: "Мониторинг", download: "https://systeminformer.com/downloads" },
+            { name: "Wireshark", desc: "Мощный анализатор сетевого трафика (сниффер)", category: "Мониторинг", download: "https://www.wireshark.org/download.html" },
+            { name: "Fan Control", desc: "Программное обеспечение для управления вентиляторами", category: "Мониторинг", download: "https://github.com/Rem0o/FanControl.Releases/releases" },
+            
+            // Утилиты
+            { name: "AutoClicker", desc: "Программа для автоматизации кликов мыши", category: "Утилиты", download: "https://sourceforge.net/projects/orphamielautoclicker/files/latest/download" },
+            { name: "AutoHotkey", desc: "Инструмент для автоматизации действий и создания макросов", category: "Утилиты", download: "https://www.autohotkey.com/" },
+            { name: "CatLock", desc: "Утилита для блокировки и контроля доступа к системе", category: "Утилиты", download: "https://catlock.app/download/" },   
+            { name: "ShareX", desc: "Инструмент для скриншотов и записи экрана с открытым кодом", category: "Утилиты", download: "https://getsharex.com/downloads.html" },
+            { name: "SuperF4", desc: "Принудительное завершение любых процессов (убийца окон)", category: "Утилиты", download: "https://stefansundin.github.io/superf4/" },                 
+            
+            // Офис
+            { name: "Calibre", desc: "Мощный менеджер электронной библиотеки", category: "Офис", download: "https://github.com/kovidgoyal/calibre/releases" },
+            { name: "Acrobat Pro", desc: "Профессиональный стандарт для работы с файлами PDF", category: "Офис", download: "https://drive.google.com/file/d/1CPHGb0rZvr6BXTm0bAgIr9X75kBME4TW/view?usp=sharing" },
+            { name: "LibreOffice", desc: "Бесплатный офисный пакет, альтернатива Microsoft Office", category: "Офис", download: "https://www.libreoffice.org/download/" },
+
+            // Видео
+            { name: "MediaInfo", desc: "Позволяет получать технические данные и тэги из видео- или аудио- файлов", category: "Видео", download: "https://www.softportal.com/get-5181-mediainfo.html" },
+            { name: "Movavi Video Converter", desc: "Проприетарная программа на русском языке для конвертации видео-, аудио- и графических файлов различных форматов, изменения параметров видео", category: "Видео", download: "https://drive.google.com/file/d/1_a01p-RA56dqKX2JBKEi3YqUgQEspOYS/view?usp=sharing" },
+            { name: "VLC", desc: "Бесплатный, всеядный медиапроигрыватель", category: "Видео", download: "https://www.videolan.org/" },
+            
+            // Разработка
+            { name: "Node.js", desc: "Среда выполнения JavaScript на сервере", category: "Разработка", download: "https://nodejs.org/en/download/current" },
+            { name: "Python", desc: "Язык программирования общего назначения", category: "Разработка", download: "https://www.python.org/downloads/" },
+            { name: "Letos", desc: "Легкая утилита для оптимизации системы", category: "Разработка", download: "https://github.com/pawelsalawa/letos/releases" },
+            { name: "Git", desc: "Распределенная система контроля версий", category: "Разработка", download: "https://git-scm.com/install/windows" },
+            { name: "Obsidian", desc: "Мощная база знаний на основе Markdown", category: "Разработка", download: "https://obsidian.md/download" },
+            { name: "Sublime Text", desc: "Легкий и мощный текстовый редактор для кода", category: "Разработка", download: "https://www.sublimetext.com/download" },
+            { name: "VirtualBox", desc: "Платформа для виртуализации с открытым исходным кодом", category: "Разработка", download: "https://www.virtualbox.org/wiki/Downloads" },
+            { name: "VSCodium", desc: "Редактор кода на базе VS Code без телеметрии", category: "Разработка", download: "https://github.com/vscodium/vscodium/releases" },
+            { name: "FileZilla", desc: "Популярный FTP-клиент с открытым исходным кодом", category: "Разработка", download: "https://filezilla-project.org/download.php?type=client" },
+            { name: "FileZilla Server", desc: "Серверная часть FTP-сервера FileZilla", category: "Разработка", download: "https://filezilla-project.org/download.php?type=server" },      
+            { name: "WGET", desc: "Бесплатная консольная программа для скачивания файлов из интернета, поддерживающая протоколы HTTP, HTTPS и FTP", category: "Разработка", download: "https://eternallybored.org/misc/wget/" },        
+            
+            // Драйверы & Системные утилиты
+            { name: "Realtek HD Audio Drivers R2.81", desc: "Звуковой драйвер", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1TColPpBHr6AVX-d7EbKtVwbYn3vdMAPa/view?usp=sharing" },
+            { name: "NVIDIA Game Ready 582.53", desc: "Драйвер видеокарты", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/17QMYGunKmkIdIrZ9WSPt0n9kTPZG3Pwv/view?usp=sharing" },
+            { name: "Microsoft DirectX®", desc: "Набор программных интерфейсов (API), разработанных для операционных систем Windows", category: "Драйверы & Системные утилиты", download: "https://www.microsoft.com/ru-ru/download/details.aspx?id=35" },
+            { name: "JDK 21", desc: "Официальный пакет разработчика для языка Java", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1nGHuHKT6N_PTuJ7Vpz2SVrxsG9ssfxp3/view?usp=sharing" },
+            { name: "VC Redist x64", desc: "Официальный пакет системных библиотек от Microsoft", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1o4MvzqCAXHONiB0yfTzB1lRpO-Sdc38_/view?usp=sharing" },
+            { name: "VC Redist x86", desc: "Официальный пакет системных библиотек от Microsoft", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1uY9Rg9dQhENcuDdts6ASCc-Ij2zvrUgG/view?usp=sharing" },
+            { name: ".NET Desktop Runtime", desc: "Специальная системная программа от Microsoft, которая нужна для запуска настольных приложений", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1MFCDHUxKLKoALfg8YLB6CWgV0zQtGayF/view?usp=sharing" },
+            { name: "dControl (Defender Control)", desc: "Управление обновлениями и телеметрией Windows", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/1W0fA3G2SDdSIkog-zE02TM2B_3hcmQua/view?usp=sharing" },
+            { name: "DDU (Display Driver Uninstaller)", desc: "Полное удаление драйверов видеокарт", category: "Драйверы & Системные утилиты", download: "https://www.wagnardsoft.com/forums/viewtopic.php?t=5633" },
+            { name: "Wub (Windows Update Blocker)", desc: "Блокировка обновлений Windows", category: "Драйверы & Системные утилиты", download: "https://drive.google.com/file/d/126TWbNHSku5Cn0fAMsbyB-RS1VHttFXu/view?usp=sharing" },     
+            { name: "EdgeRemover", desc: "Скрипт PowerShell, который корректно удаляет или переустанавливает Microsoft Edge в Windows 10 и 11", category: "Драйверы & Системные утилиты", download: "https://github.com/he3als/EdgeRemover" },    
+            { name: "Msi-Utility-v3", desc: "Бесплатная системная утилита, которая переключает способ обработки сигналов устройств", category: "Драйверы & Системные утилиты", download: "https://github.com/Sathango/Msi-Utility-v3" },    
+            { name: "Crapfixer", desc: "Исправляет ошибки, которые оставляет после себя Windows", category: "Драйверы & Системные утилиты", download: "https://github.com/builtbybel/Crapfixer" },    
+            { name: "Microsoft-Activation-Scripts", desc: "Активатор Windows и Office с открытым исходным кодом, поддерживающий методы активации HWID, Ohook, TSforge и Online KMS, а также расширенные возможности устранения неполадок", category: "Драйверы & Системные утилиты", download: "https://github.com/massgravel/Microsoft-Activation-Scripts" },    
+            { name: "LTSC-Add-MicrosoftStore", desc: "Add Store to Windows 10 Enterprise LTSC", category: "Драйверы & Системные утилиты", download: "https://github.com/kkkgo/LTSC-Add-MicrosoftStore" },           
+            
+            // Source Engine
+            { name: "Crowbar", desc: "Обширный инструмент для игр на Source Engine", category: "Source Engine", download: "https://github.com/ZeqMacaw/Crowbar/releases" },
+            { name: "GCFScape", desc: "Бесплатная программа для просмотра, распаковки и управления игровыми архивами", category: "Source Engine", download: "https://gamebanana.com/tools/26" },
+            { name: "GModPatchTool", desc: "Специальный патчер для игры Garry's Mod, который исправляет проблемы с браузерным движком Chromium (CEF)", category: "Source Engine", download: "https://github.com/solsticegamestudios/GModPatchTool" },
+            { name: "GMPublisher", desc: "Удобная программа для игры Garry's Mod, которая помогает загружать дополнения в Мастерскую Steam и распаковывать файлы аддонов (GMA)", category: "Source Engine", download: "https://github.com/WilliamVenner/gmpublisher/releases" },
+            { name: "Pakrat", desc: "Бесплатная программа для упаковки пользовательских файлов в файлы карт (BSP) для игр на движке Source", category: "Source Engine", download: "https://drive.google.com/file/d/1TU4dJHBhRtfCYlO0DzGqXDGvVNbroXyx/view?pli=1" },
+            { name: "SRC Repair", desc: "Бесплатная утилита с открытым исходным кодом, предназначенная для настройки, оптимизации и восстановления игр на платформе Steam, работающих на движке Source", category: "Source Engine", download: "https://github.com/xvitaly/srcrepair/releases" },
+            { name: "VTFEdit", desc: "бесплатная программа для работы с текстурами на движке Source", category: "Source Engine", download: "https://github.com/Sky-rym/VTFEdit-Reloaded/releases" },
+
+
+
+            // { name: "", desc: "", category: "" },
+        ];
+
+        function getIconLetter(name) {
+            return name.charAt(0).toUpperCase();
+        }
+
+        function buildTableRows(filteredData, searchText = '') {
+            let html = '';
+            filteredData.forEach(prog => {
+                if (searchText && !prog.name.toLowerCase().includes(searchText.toLowerCase()) && 
+                    !prog.desc.toLowerCase().includes(searchText.toLowerCase())) {
+                    return;
+                }
+                const letter = getIconLetter(prog.name);
+                html += `
+                    <tr class="app-row">
+                        <td class="app-cell icon-col"><div class="app-icon">${letter}</div></td>
+                        <td class="app-cell">
+                            <div class="app-title">${prog.name}</div>
+                            <p class="app-desc">${prog.desc}</p>
+                        </td>
+                        <td class="app-cell actions-col">
+                            <a href="${prog.download || '#'}" class="btn btn-download">СКАЧАТЬ</a>
+                        </td>
+                    </tr>
+                `;
+            });
+            return html;
+        }
+
+        function filterByCategory(category, searchText = '') {
+            const filtered = programData.filter(p => p.category === category);
+            return buildTableRows(filtered, searchText);
+        }
+
+        function filterAll(searchText = '') {
+            return buildTableRows(programData, searchText);
+        }
+
+        function renderAllTabs(searchText = '') {
+            document.getElementById('mainTableBody').innerHTML = filterAll(searchText);
+
+            const tabMap = {
+                tab2: 'Звук',
+                tab3: 'Графика',
+                tab4: 'Интернет',
+                tab5: 'Диск и файлы',
+                tab6: 'Мониторинг',
+                tab7: 'Source Engine',
+                tab8: 'Разработка',
+                tab9: 'Утилиты',
+                tab10: 'Офис',
+                tab11: 'Драйверы & Системные утилиты',
+                tab12: 'Видео',
+            };
+
+            Object.keys(tabMap).forEach(tabId => {
+                const container = document.getElementById(tabId + 'content');
+                const category = tabMap[tabId];
+                const filtered = programData.filter(p => p.category === category);
+                let html = `<p style="padding:10px 0; font-style:italic; color:#444;">${category}: ${filtered.map(p => p.name).join(', ')}</p>`;
+                html += `<table class="software-table"><thead><tr><th colspan="2">Название и описание</th><th>Действия</th></tr></thead><tbody>`;
+                filtered.forEach(prog => {
+                    if (searchText && !prog.name.toLowerCase().includes(searchText.toLowerCase()) && 
+                        !prog.desc.toLowerCase().includes(searchText.toLowerCase())) {
+                        return;
+                    }
+                    const letter = getIconLetter(prog.name);
+                    html += `
+                        <tr class="app-row">
+                            <td class="app-cell icon-col"><div class="app-icon">${letter}</div></td>
+                            <td class="app-cell"><div class="app-title">${prog.name}</div><p class="app-desc">${prog.desc}</p></td>
+                            <td class="app-cell actions-col"><a href="${prog.download || '#'}" class="btn btn-download">СКАЧАТЬ</a></td>
+                        </tr>
+                    `;
+                });
+                html += `</tbody></table>`;
+                container.innerHTML = html;
+            });
+        }
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = {
+            tab1: document.getElementById('tab1'),
+            tab2: document.getElementById('tab2'),
+            tab3: document.getElementById('tab3'),
+            tab4: document.getElementById('tab4'),
+            tab5: document.getElementById('tab5'),
+            tab6: document.getElementById('tab6'),
+            tab7: document.getElementById('tab7'),
+            tab8: document.getElementById('tab8'),
+            tab9: document.getElementById('tab9'),
+            tab10: document.getElementById('tab10'),
+            tab11: document.getElementById('tab11'),
+            tab12: document.getElementById('tab12'),
+        };
+
+        let currentTab = 'tab1';
+
+        function switchTab(tabId) {
+            Object.keys(contents).forEach(key => {
+                contents[key].classList.toggle('active', key === tabId);
+            });
+            tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+            currentTab = tabId;
+            const searchText = document.getElementById('searchInput').value.trim();
+            renderAllTabs(searchText);
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                switchTab(this.dataset.tab);
+            });
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const resetBtn = document.getElementById('resetSearchBtn');
+
+        function doSearch() {
+            const searchText = searchInput.value.trim();
+            renderAllTabs(searchText);
+        }
+
+        searchBtn.addEventListener('click', doSearch);
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') doSearch();
+        });
+
+        resetBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            doSearch();
+        });
+
+        renderAllTabs('');
+    })();
+</script>
+</body>
+</html>
